@@ -43,5 +43,6 @@ class Shift
     offsets
   end
 
-  
+  def shift
+  end 
 end

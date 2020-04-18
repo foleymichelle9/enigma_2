@@ -50,6 +50,7 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_can_determine_shift_amount
-    assert_equal expected = ({:A=> 18, :B=> 27, :C=> 34, :D=> 45})
+    expected = ({:A=> 18, :B=> 27, :C=> 34, :D=> 45})
+    assert_equal expected, @shift.shift_amount 
   end
 end
