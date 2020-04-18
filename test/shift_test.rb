@@ -51,6 +51,16 @@ class ShiftTest < Minitest::Test
 
   def test_it_can_determine_shift_amount
     expected = ({:A=> 18, :B=> 27, :C=> 34, :D=> 45})
-    assert_equal expected, @shift.shift_amount 
+    assert_equal expected, @shift.shift_amount
+  end
+
+  def test_it_can_split_alphabet
+     expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+
+     assert_equal expected, @shift.alphabet
+  end
+
+  def test_it_can_shift_message
+    assert_equal 
   end
 end
