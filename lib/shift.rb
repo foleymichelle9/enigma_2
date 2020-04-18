@@ -31,8 +31,18 @@ class Shift
   end
 
   def last_four_digits
-    last_four = []
-    last_four << squared_date[-4..-1].to_i
-    last_four
+    last_four = squared_date[-4..-1].split(//)
+    last_four.map(&:to_i)
+    #require "pry"; binding.pry
+    #last_four.split(//).to_i
+  end
+
+  def offsets
+    offsets = {}
+    offsets[:A] = last_four[0]
+    offsets[:B] = last_four[1]
+    offsets[:C] = last_four[2]
+    offsets[:D] = last_four[3]
+    offsets
   end
 end
