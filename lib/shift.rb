@@ -39,10 +39,10 @@ class Shift
 
   def offsets
     offsets = {}
-    offsets[:A] = last_four[0]
-    offsets[:B] = last_four[1]
-    offsets[:C] = last_four[2]
-    offsets[:D] = last_four[3]
+    offsets[:A] = last_four_digits[0]
+    offsets[:B] = last_four_digits[1]
+    offsets[:C] = last_four_digits[2]
+    offsets[:D] = last_four_digits[3]
     offsets
   end
 end

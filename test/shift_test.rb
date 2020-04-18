@@ -44,7 +44,6 @@ class ShiftTest < Minitest::Test
   end
 
   def test_itcan_assign_offset_to_variable
-    skip
     expected = ({:A=> 6, :B=> 4, :C=> 0, :D=> 0})
 
     assert_equal expected, @shift.offsets
