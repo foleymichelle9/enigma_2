@@ -25,7 +25,6 @@ class Shift
   end
 
   def squared_date
-    #squared = []
     squared = (@date.to_i  * @date.to_i)
     squared.to_s
   end
@@ -33,8 +32,6 @@ class Shift
   def last_four_digits
     last_four = squared_date[-4..-1].split(//)
     last_four.map(&:to_i)
-    #require "pry"; binding.pry
-    #last_four.split(//).to_i
   end
 
   def offsets
@@ -45,4 +42,6 @@ class Shift
     offsets[:D] = last_four_digits[3]
     offsets
   end
+
+  
 end
