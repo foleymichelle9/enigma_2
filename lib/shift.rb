@@ -24,8 +24,15 @@ class Shift
     keys
   end
 
-  def offsets
+  def squared_date
+    #squared = []
     squared = (@date.to_i  * @date.to_i)
+    squared.to_s
+  end
 
+  def last_four_digits
+    last_four = []
+    last_four << squared_date[-4..-1].to_i
+    last_four
   end
 end

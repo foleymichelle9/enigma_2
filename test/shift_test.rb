@@ -36,6 +36,16 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_can_square_date
-    assert_equal 32551376400, @shift.offsets
+    assert_equal "32551376400", @shift.squared_date
+  end
+
+  def test_it_can_extract_last_four_digits_from_squared_date
+    assert_equal [6400], @shift.last_four_digits
+  end
+
+  def test_itcan_assign_offset_to_variable
+    expected ({:A=> 6, :B=> 4, :C=> 0, :D=> 0})
+
+    assert_equal expected, @shift.offsets 
   end
 end
