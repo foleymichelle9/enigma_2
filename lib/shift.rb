@@ -43,6 +43,7 @@ class Shift
     offsets
   end
 
-  def shift
-  end 
+  def shift_amount
+    assign_keys.merge(offsets){ |k, a_value, b_value| a_value + b_value }
+  end
 end
