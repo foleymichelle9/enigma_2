@@ -56,7 +56,12 @@ class Shift
   end
 
   def shift_message(message)
-    shift = shift_amount
-
+    shift = shift_amount.values
+    size = []
+    message.length.times do
+      size << shift[0]
+      shift.rotate!
+    end
+    size
   end
 end
