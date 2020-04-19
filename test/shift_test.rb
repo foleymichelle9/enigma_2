@@ -6,6 +6,7 @@ class ShiftTest < Minitest::Test
 
   def setup
     @shift = Shift.new
+    @message = 'Hi Ruby!'
   end
 
   def test_it_exists
@@ -36,7 +37,7 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_can_square_date
-    assert_equal "32551376400", @shift.squared_date
+    assert_equal "36259776400", @shift.squared_date
   end
 
   def test_it_can_extract_last_four_digits_from_squared_date
@@ -60,7 +61,13 @@ class ShiftTest < Minitest::Test
      assert_equal expected, @shift.alphabet
   end
 
-  def test_it_can_shift_message
-    assert_equal 
+  def test_it_can_split_up_message
+    @message = 'Hi Ruby!'
+
+    assert_equal ['h','i',' ','r','u','b','y','!'], @shift.split_message(@message)
+  end
+
+  def test_it_can_shift_message_amount_needed
+    assert_equal [18,27,34,45,18,27,34,45], @shift.shift_message(@message)
   end
 end

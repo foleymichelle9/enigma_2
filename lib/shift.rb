@@ -51,5 +51,12 @@ class Shift
     ("a".."z").to_a << " "
   end
 
+  def split_message(message)
+    message.downcase.split(//)
+  end
 
+  def shift_message(message)
+    shift = shift_amount
+
+  end
 end
