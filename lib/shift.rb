@@ -64,4 +64,10 @@ class Shift
     end
     size
   end
+
+  def shifted_alphabet(message)
+  end
+
+  # def shifted_message
+  # end
 end
