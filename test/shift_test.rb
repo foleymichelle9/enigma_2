@@ -7,6 +7,7 @@ class ShiftTest < Minitest::Test
   def setup
     @shift = Shift.new
     @message = 'Hi Ruby!'
+    @message2 = "Hello World!"
   end
 
   def test_it_exists
@@ -84,7 +85,8 @@ class ShiftTest < Minitest::Test
     assert_equal expected, @shift.shifted_alphabet(@message)
   end
 
-  # def test_it_can_shift_message
-  #     assert_equal 'ueingyg!', shift.new_message(message)
-  # end
+  def test_it_can_shift_message
+      assert_equal "zigilbe!", @shift.shifted_message(@message)
+      assert_equal "zescf cfilk!", @shift.shifted_message(@message2)
+  end
 end

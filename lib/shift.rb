@@ -71,6 +71,9 @@ class Shift
     end
   end
 
-  # def shifted_message
-  # end
+  def shifted_message(message)
+    split_message(message).map.with_index do |char, index|
+      char.tr(alphabet.join, shifted_alphabet(message)[index].join)
+    end.join
+  end
 end
