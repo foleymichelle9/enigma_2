@@ -51,5 +51,35 @@ class Shift
     ("a".."z").to_a << " "
   end
 
+  def split_message(message)
+    message.downcase.split(//)
+  end
 
+  def shift_message(message)
+    shift = shift_amount.values
+    size = []
+    message.length.times do
+      size << shift[0]
+      shift.rotate!
+    end
+    size
+  end
+
+  def shifted_alphabet(message)
+    split_message(message).map.with_index do |char, index|
+      alphabet.rotate(shift_message(message)[index])
+    end
+  end
+
+  def shifted_message(message)
+    split_message(message).map.with_index do |char, index|
+      char.tr(alphabet.join, shifted_alphabet(message)[index].join)
+    end.join
+  end
+
+  def unshifted_message(message)
+    split_message(message).map.with_index do |char, index|
+      char.tr(shifted_alphabet(message)[index].join, alphabet.join)
+    end.join
+  end
 end
