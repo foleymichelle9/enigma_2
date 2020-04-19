@@ -6,8 +6,8 @@ class ShiftTest < Minitest::Test
 
   def setup
     @shift = Shift.new
-    @message = 'Hi Ruby!'
-    @message2 = "Hello World!"
+    @message = 'hi ruby!'
+    @message2 = "hello World!"
   end
 
   def test_it_exists
@@ -91,6 +91,7 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_can_unshift_message
-    assert_equal "Hi Ruby!", @shift.unshifted_message(@message)
+    message = "zigilbe!"
+    assert_equal "hi ruby!", @shift.unshifted_message(message)
   end
 end
