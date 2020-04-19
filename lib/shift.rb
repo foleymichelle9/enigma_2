@@ -66,6 +66,9 @@ class Shift
   end
 
   def shifted_alphabet(message)
+    split_message(message).map.with_index do |char, index|
+      alphabet.rotate(shift_message(message)[index])
+    end
   end
 
   # def shifted_message
