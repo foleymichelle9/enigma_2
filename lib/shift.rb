@@ -81,6 +81,5 @@ class Shift
     split_message(message).map.with_index do |char, index|
       char.tr(shifted_alphabet(message)[index].join, alphabet.join)
     end.join
-    #require "pry"; binding.pry
   end
 end
