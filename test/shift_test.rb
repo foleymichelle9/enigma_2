@@ -89,4 +89,8 @@ class ShiftTest < Minitest::Test
       assert_equal "zigilbe!", @shift.shifted_message(@message)
       assert_equal "zescf cfilk!", @shift.shifted_message(@message2)
   end
+
+  def test_it_can_unshift_message
+    assert_equal "Hi Ruby!", @shift.unshifted_message(@message)
+  end
 end

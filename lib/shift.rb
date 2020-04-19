@@ -76,4 +76,7 @@ class Shift
       char.tr(alphabet.join, shifted_alphabet(message)[index].join)
     end.join
   end
+
+  def unshifted_message(message)
+  end
 end
