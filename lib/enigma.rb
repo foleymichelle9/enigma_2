@@ -14,4 +14,13 @@ class Enigma
       date: date
     }
   end
+
+  def decrypt(message, key = @key, date = @date)
+    @shift = Shift.new(key, date)
+    {
+      decryption: @shift.unshifted_message(message),
+      key: key,
+      date: date
+    }
+  end
 end
