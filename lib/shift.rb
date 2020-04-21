@@ -1,7 +1,7 @@
 class Shift
 
   attr_reader :key, :date
-  #key = rand.to_s[2..6] can't use because I can't get stub working 
+  #key = rand.to_s[2..6] can't use because I can't get stub working
   def initialize(key = "12345", date = DateTime.now.strftime('%d%m%y').to_s)
     @key = key
     @date = date

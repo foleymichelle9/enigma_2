@@ -38,7 +38,7 @@ class ShiftTest < Minitest::Test
 
   def test_it_can_square_date
     assert_instance_of String, @shift.squared_date
-    assert_equal "40168176400", @shift.squared_date
+    assert_equal "44276576400", @shift.squared_date
   end
 
   def test_it_can_extract_last_four_digits_from_squared_date
@@ -93,6 +93,11 @@ class ShiftTest < Minitest::Test
 
   def test_it_can_unshift_message
     message = "zigilbe!"
+    message2 = "zescf cfilk!"
+    message3 = "poarza wrtvrjelr t!r"
+
     assert_equal "hi ruby!", @shift.unshifted_message(message)
+    assert_equal "hello world!",  @shift.unshifted_message(message2)
+    assert_equal "you hate to see it! ", @shift.unshifted_message(message3)
   end
 end
