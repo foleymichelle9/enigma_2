@@ -22,7 +22,6 @@ class ShiftTest < Minitest::Test
   end
 
   def test_date_is_current
-
     expected = DateTime.now.strftime('%d%m%y').to_s
     assert_equal expected, @shift.date
   end
@@ -38,7 +37,8 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_can_square_date
-    assert_equal "36259776400", @shift.squared_date
+    assert_instance_of String, @shift.squared_date
+    assert_equal "40168176400", @shift.squared_date
   end
 
   def test_it_can_extract_last_four_digits_from_squared_date
@@ -73,6 +73,7 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_can_shift_alphabet_by_shift_amount
+
     expected = [["s", "t", "u", "v", "w", "x", "y", "z", " ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r"],
                 ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "],
                 ["h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " ", "a", "b", "c", "d", "e", "f", "g"],
